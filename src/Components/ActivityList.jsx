@@ -1,5 +1,5 @@
 
-function PrintComponent({ activities, statuses, startEdit, setActivities }) {
+function ActivityList({ activities, statuses, startEdit, setActivities }) {
   console.log(activities, "here");
 
   return (
@@ -49,4 +49,4 @@ function PrintComponent({ activities, statuses, startEdit, setActivities }) {
   );
 }
 
-export default PrintComponent;
+export default ActivityList;

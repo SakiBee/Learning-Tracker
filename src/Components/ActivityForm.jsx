@@ -1,13 +1,11 @@
-import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 
-function FormComponent({
+function ActivityForm({
   onSubmit,
   statuses,
   selectedStatus,
   setSelectedStatus,
   editingId,
-  // setActivities,
 }) {
   const { register, handleSubmit } = useForm();
   return (
@@ -50,4 +48,4 @@ function FormComponent({
   );
 }
 
-export default FormComponent;
+export default ActivityForm;

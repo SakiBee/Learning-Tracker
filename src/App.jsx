@@ -1,7 +1,7 @@
 import React, { useState, useContext, createContext } from "react";
 import { useForm } from "react-hook-form";
-import FormComponent from "./Components/FormComponent";
-import PrintComponent from "./Components/PrintComponent";
+import FormComponent from "./components/ActivityForm";
+import PrintComponent from "./components/ActivityList";
 
 export const MyContext = createContext();
 
@@ -9,8 +9,7 @@ function App() {
   const [activities, setActivities] = useState([]);
   const [editingId, setEditingId] = useState(null);
   const [selectedStatus, setSelectedStatus] = useState("Completed");
-
-  const { register, handleSubmit, reset, setValue } = useForm();
+  const { reset, setValue } = useForm();
 
   const statuses = [
     {
@@ -62,7 +61,7 @@ function App() {
         <h1 className="text-white text-3xl font-extrabold mb-6 text-center tracking-tight">
           Learning Tracker
         </h1>
-        <FormComponent
+        <ActivityForm
           onSubmit={onSubmit}
           statuses={statuses}
           selectedStatus={selectedStatus}
@@ -71,7 +70,7 @@ function App() {
           setActivities={setActivities}
         />
 
-        <PrintComponent
+        <ActivityList
           activities={activities}
           statuses={statuses}
           startEdit={startEdit}
